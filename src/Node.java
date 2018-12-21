@@ -13,6 +13,11 @@ public class Node {
 	public Node() {
 		super();
 	}
+	
+	public void nextNode(Node temp) {
+		// TODO Auto-generated method stub
+		nextNode = temp;
+	}
    
     
 }

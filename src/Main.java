@@ -13,8 +13,8 @@ public class Main {
 		scanner = new Scanner(System.in);
 
 		LinkedList ls = new LinkedList();
-		ls.insert(1, "Joe");
-		ls.insert(2, "Mary");
+		ls.insertLast(1, "Joe");
+		ls.insertLast(2, "Mary");
 		ls.print();
 		
 
@@ -39,6 +39,8 @@ public class Main {
 				switch (option) {
 				case 1:
 					System.out.println("Delete First Patient ");
+					ls.deleteFirst();
+					ls.print();
 
 					break;
 				case 2:
@@ -51,7 +53,10 @@ public class Main {
 				// Delete patient
 				case 4:
 					System.out.println("Delete Patient ");
-					System.out.println("Insert the PID number of the patient to delete ");
+                    System.out.println("Insert the PID number of the patient to delete ");
+                    int n = scanner.nextInt();
+                    ls.delete(n);
+                    ls.print();
 
 					break;
 				case 5:
@@ -64,11 +69,16 @@ public class Main {
 
 					break;
 				case 7:
-
+					ls.print();
 					break;
 				case 8:
 					
-					ls.insert(3, "Nuevo");
+                    System.out.println("Add name of patient: ");
+                    String nom = scanner.next();
+                    System.out.println("Add PID number");
+                    int pid = scanner.nextInt();
+                    
+					ls.insertLast(pid, nom);
 					ls.print();
 
 					break;
